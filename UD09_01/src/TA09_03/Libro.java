@@ -72,7 +72,7 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return "Libro [ISBN=" + ISBN + ", Titulo=" + Titulo + ", Autor=" + Autor + ", Numero de paginas=" + nPaginas + "]";
+		return "El libro con ISBN: "+this.ISBN+" creado por: "+this.Autor+"tiene: "+this.nPaginas+" páginas";
 	}
 	
 	
