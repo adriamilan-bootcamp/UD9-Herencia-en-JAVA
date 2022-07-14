@@ -1,4 +1,4 @@
-package src.TA09_02;
+package TA09_02;
 
 public class Videojuego implements Entregable {
 	
