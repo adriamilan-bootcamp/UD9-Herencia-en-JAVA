@@ -1,7 +1,5 @@
 package TA09_04;
 
-import java.lang.FdLibm.Pow;
-
 public class Raices {
 	private double a, b, c;
 	
