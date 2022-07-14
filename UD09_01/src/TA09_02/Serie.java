@@ -11,13 +11,11 @@ public class Serie {
 	}
 
 	public Serie(String titulo, String creador) {
-		super();
 		this.titulo = titulo;
 		this.creador = creador;
 	}
 
 	public Serie(String titulo, int nTemporadas, String creador) {
-		super();
 		this.titulo = titulo;
 		this.nTemporadas = nTemporadas;
 		this.creador = creador;
