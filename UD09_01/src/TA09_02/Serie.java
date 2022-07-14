@@ -1,6 +1,6 @@
 package TA09_02;
 
-public class Serie {
+public class Serie implements Entregable{
 	protected String titulo = "";
 	protected int nTemporadas = 3;
 	protected boolean entregado = false;
@@ -67,6 +67,25 @@ public class Serie {
 	public String toString() {
 		return "Serie [titulo=" + titulo + ", Numero de temporadas=" + nTemporadas + ", entregado=" + entregado + ", creador="
 				+ creador + "]";
+	}
+
+	@Override
+	public void entregar() {
+		// TODO Auto-generated method stub
+		this.entregado = true;
+		
+	}
+
+	@Override
+	public void devolver() {
+		// TODO Auto-generated method stub
+		this.entregado = false;
+	}
+
+	@Override
+	public boolean isEntregado() {
+		// TODO Auto-generated method stub
+		return this.entregado;
 	}
 	
 	
