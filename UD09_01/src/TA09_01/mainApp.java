@@ -1,44 +1,47 @@
 package TA09_01;
 
+import java.text.DecimalFormat;
+
+import TA09_02.Serie;
+
 public class mainApp {
 
 	public static void main(String[] args) {
+		Electrodomestico electrodomesticos[] = new Electrodomestico[10];
 		
-		Electrodomestico nevera1 = new Electrodomestico();
-		Electrodomestico nevera2 = new Electrodomestico(300,10);
-		Electrodomestico nevera3 = new Electrodomestico(300,"magenta",'A',10);
+		electrodomesticos[0] = new Lavadora(31,200,"Gris",'B',7);
+		electrodomesticos[1] = new Lavadora(22,400,"magenta",'X',7);	
+		electrodomesticos[2] =new Lavadora(33,199,"Azul",'D',10);	
+		electrodomesticos[3] = new Lavadora(20,149,"rojo",'E',6);	
+		electrodomesticos[4] = new Lavadora(50,599,"negro",'A',10);	
+		electrodomesticos[5] = new Television(65,true,1199,"Rojo",'A',6);	
+		electrodomesticos[6] = new Television(55,true,899,"blacno",'A',5);		
+		electrodomesticos[7] = new Television(45,false,599,"negro",'B',4);	
+		electrodomesticos[8] = new Television(45,false,499,"amarillo",'B',4);		
+		electrodomesticos[9] = new Television(25,false,299,"verde",'T',4);		
 		
-		nevera3.precioFinal();
+		double precioLavadoras = 0;
+		double precioTelevisiones = 0;
+		double preciototal = 0;
+	
+		for (int i = 0; i < electrodomesticos.length; i++) {
+			electrodomesticos[i].precioFinal();
+			if (electrodomesticos[i] instanceof Lavadora) {
+				precioLavadoras += electrodomesticos[i].getPrecio();
+			}
+			
+			if (electrodomesticos[i] instanceof Television) {
+				precioTelevisiones += electrodomesticos[i].getPrecio();	
+			}
+			
+			preciototal += electrodomesticos[i].getPrecio();
+		}
+		
+		DecimalFormat df = new DecimalFormat("#.00");
 
-		System.out.println("Electrodoméstico1:\n"+nevera1.getPrecio()+"€ "+nevera1.getColor()+" -(Cosnumo) "+nevera1.getConsumoEnergetico()+" - "+nevera1.getPeso()+"kg");
-		System.out.println("Electrodoméstico2:\n"+nevera2.getPrecio()+"€ "+nevera2.getColor()+" -(Cosnumo) "+nevera2.getConsumoEnergetico()+" - "+nevera2.getPeso()+"kg");
-		System.out.println("Electrodoméstico3:\n"+nevera3.getPrecio()+"€ "+nevera3.getColor()+" -(Cosnumo) "+nevera3.getConsumoEnergetico()+" - "+nevera3.getPeso()+"kg");
-
-		Lavadora lavadora1 = new Lavadora();
-		Lavadora lavadora2 = new Lavadora(200,9);		
-		Lavadora lavadora3 = new Lavadora(31,200,"Gris",'B',10);	
-		
-		lavadora2.precioFinal();
-		lavadora3.precioFinal();
-
-		System.out.println("\nLavadora1:\n"+lavadora1.getPrecio()+"€ "+lavadora1.getColor()+" -(Cosnumo) "+lavadora1.getConsumoEnergetico()+" - "+lavadora1.getPeso()+"kg -(Carga)"+lavadora1.getCarga());
-		System.out.println("Lavadora2:\n"+lavadora2.getPrecio()+"€ "+lavadora2.getColor()+" -(Cosnumo) "+lavadora2.getConsumoEnergetico()+" - "+lavadora2.getPeso()+"kg -(Carga)"+lavadora2.getCarga());
-		System.out.println("Lavadora3:\n"+lavadora3.getPrecio()+"€ "+lavadora3.getColor()+" -(Cosnumo) "+lavadora3.getConsumoEnergetico()+" - "+lavadora3.getPeso()+"kg -(Carga)"+lavadora3.getCarga());
-		
-		Television television1 = new Television();
-		Television television2 = new Television(599,6);
-		Television television3 = new Television(65,false,1199,"Rojo",'A',10);
-		
-		television1.precioFinal();
-		television2.precioFinal();
-		television3.precioFinal();
-
-		
-		System.out.println("\nTelevision1:\n"+television1.getPrecio()+"€ "+television1.getColor()+" -(Cosnumo) "+television1.getConsumoEnergetico()+" - "+television1.getPeso()+"kg -(Pulgadas) "+television1.getPulgadas());
-		System.out.println("Television2:\n"+television2.getPrecio()+"€ "+television2.getColor()+" -(Cosnumo) "+television2.getConsumoEnergetico()+" - "+television2.getPeso()+"kg -(Pulgadas) "+television2.getPulgadas());
-		System.out.println("Television3:\n"+television3.getPrecio()+"€ "+television3.getColor()+" -(Cosnumo) "+television3.getConsumoEnergetico()+" - "+television3.getPeso()+"kg -(Pulgadas) "+television3.getPulgadas());
-
-		
+		System.out.println("Precio de todas las Lavadoras :"+df.format(precioLavadoras)+ "€");
+		System.out.println("Precio de todas las Televisiones: "+df.format(precioTelevisiones)+ "€");
+		System.out.println("Precio de todos los electrodomesticos: "+df.format(preciototal)+ "€");
 		
 	}
 
