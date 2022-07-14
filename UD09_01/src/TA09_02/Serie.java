@@ -71,5 +71,6 @@ public class Serie {
 				+ creador + "]";
 	}
 	
+	
 
 }
