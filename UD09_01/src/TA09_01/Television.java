@@ -1,6 +1,7 @@
 package TA09_01;
 
 public class Television extends Electrodomestico {
+	/*Atributos de la clase */
 	private int pulgadas = 20;
 	private boolean TDT = false;
 	
