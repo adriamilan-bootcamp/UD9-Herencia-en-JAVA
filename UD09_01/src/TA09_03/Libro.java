@@ -69,6 +69,11 @@ public class Libro {
 	public void setnPaginas(int nPaginas) {
 		this.nPaginas = nPaginas;
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [ISBN=" + ISBN + ", Titulo=" + Titulo + ", Autor=" + Autor + ", Numero de paginas=" + nPaginas + "]";
+	}
 	
 	
 	
