@@ -98,7 +98,7 @@ public class Videojuego implements Entregable {
 	 * Cambia atributo entregado a false.
 	 */
 	@Override
-	public void devolver(boolean prestado) {
+	public void devolver() {
 		this.entregado = false;
 	}
 
