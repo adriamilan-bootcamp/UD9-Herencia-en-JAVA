@@ -88,6 +88,5 @@ public class Serie implements Entregable{
 		return this.entregado;
 	}
 	
-	
 
 }
