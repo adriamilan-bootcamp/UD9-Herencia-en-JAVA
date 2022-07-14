@@ -14,7 +14,7 @@ public class Television extends Electrodomestico {
 	}
 	
 	public Television(int pulgadas, boolean TDT, double precio ,String color, char consumo, double peso) {
-		super(precio, color, peso, consumo);
+		super(precio, color, consumo, peso);
 		this.pulgadas = pulgadas;
 		this.TDT = TDT;
 	}
