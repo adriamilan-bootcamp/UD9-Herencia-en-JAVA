@@ -21,7 +21,7 @@ public class Lavadora extends Electrodomestico {
 	 * - peso
 	 */
 	public Lavadora(double precio, double peso) {
-		this.precio = precioFinal(precio, this.carga);
+		this.precio = precio;
 		this.peso = peso;
 	}
 	
@@ -32,7 +32,7 @@ public class Lavadora extends Electrodomestico {
 	 */
 	public Lavadora(double carga, double precio, String color, char consumoEnergetico, double peso) {
 		this.carga = carga;
-		this.precio = precioFinal(precio, carga);
+		this.precio = precio;
 		this.color = color;
 		this.consumoEnergetico = consumoEnergetico;
 		this.peso = peso;
@@ -46,11 +46,10 @@ public class Lavadora extends Electrodomestico {
 	/*
 	 * Si carga > 30kg aumentara 50€ el precio
 	 */
-	public double precioFinal(double precio, double carga) {
-		if(carga > 30) /* Si carga es mayor a 30 */ {
-			precio += 50; // Sumamos 50 al precio
+	public void precioFinal() {
+		if(this.carga > 30) /* Si carga es mayor a 30 */ {
+			this.precio += 50; // Sumamos 50 al precio
 		}
-		return precio; // Devolvemos el precio
 	}
 	
 }
