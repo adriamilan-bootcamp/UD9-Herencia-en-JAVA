@@ -7,14 +7,14 @@ public class Videojuego implements Entregable {
 	private final double HORAS_DEF = 10.00;
 	private final boolean ENTREGADO_DEF = false;
 	private final String GENERO_DEF = "Shooter";
-	private final String COMPAÑIA_DEF = "Techmabs";
+	private final String COMPANIA_DEF = "Techmabs";
 			
 	/*Atributos de la clase */
 	protected String titulo = TITULO_DEF;
 	protected double horasEstimadas = HORAS_DEF;
 	protected boolean entregado = ENTREGADO_DEF;
 	protected String genero = GENERO_DEF;
-	protected String compañia = COMPAÑIA_DEF;
+	protected String compania = COMPANIA_DEF;
 	
 	public Videojuego() {
 		// Constructor por defecto
@@ -41,7 +41,7 @@ public class Videojuego implements Entregable {
 		this.titulo = titulo;
 		this.horasEstimadas = horasEstimadas;
 		this.genero = genero;
-		this.compañia = compañia;
+		this.compania = compañia;
 	}
 
 	// Getters & Setters
@@ -70,11 +70,11 @@ public class Videojuego implements Entregable {
 		this.genero = genero;
 	}
 
-	public String getCompañia() {
+	public String getCompania() {
 		return compañia;
 	}
 
-	public void setCompañia(String compañia) {
+	public void setCompania(String compañia) {
 		this.compañia = compañia;
 	}
 	
@@ -89,6 +89,7 @@ public class Videojuego implements Entregable {
 	/*
 	 * Cambia atributo entregado a true.
 	 */
+	@Override
 	public void entregar() {
 		this.entregado = true;
 	}
@@ -96,6 +97,7 @@ public class Videojuego implements Entregable {
 	/*
 	 * Cambia atributo entregado a false.
 	 */
+	@Override
 	public void devolver(boolean prestado) {
 		this.entregado = false;
 	}
@@ -103,6 +105,7 @@ public class Videojuego implements Entregable {
 	/*
 	 * Devuelve el estado del atributo prestado.
 	 */
+	@Override
 	public boolean isEntregado() {
 		return entregado;
 	}
