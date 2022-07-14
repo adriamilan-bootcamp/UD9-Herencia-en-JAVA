@@ -46,14 +46,14 @@ public class mainApp {
 						
 		for (int i = 0; i < lSeries.length; i++) {
 			if(lSeries[i].isEntregado()) {
-				entregados += 1;
+				entregados ++;
 				lSeries[i].devolver();
 			}			
 		}
 		
 		for (int i = 0; i < lVideojuegos.length; i++) {
 			if(lVideojuegos[i].isEntregado()) {
-				entregados += 1;
+				entregados ++;
 				lVideojuegos[i].devolver();
 			}			
 		}
