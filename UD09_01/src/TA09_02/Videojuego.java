@@ -37,11 +37,11 @@ public class Videojuego implements Entregable {
 	 * - Género
 	 * - Compañia
 	 */
-	public Videojuego(String titulo, double horasEstimadas, String genero, String compañia) {
+	public Videojuego(String titulo, double horasEstimadas, String genero, String compania) {
 		this.titulo = titulo;
 		this.horasEstimadas = horasEstimadas;
 		this.genero = genero;
-		this.compania = compañia;
+		this.compania = compania;
 	}
 
 	// Getters & Setters
@@ -71,11 +71,11 @@ public class Videojuego implements Entregable {
 	}
 
 	public String getCompania() {
-		return compañia;
+		return compania;
 	}
 
-	public void setCompania(String compañia) {
-		this.compañia = compañia;
+	public void setCompania(String compania) {
+		this.compania = compania;
 	}
 	
 	@Override
