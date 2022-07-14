@@ -47,6 +47,7 @@ public class Lavadora extends Electrodomestico {
 	 * Si carga > 30kg aumentara 50€ el precio
 	 */
 	public void precioFinal() {
+		super.precioFinal();
 		if(this.carga > 30) /* Si carga es mayor a 30 */ {
 			this.precio += 50; // Sumamos 50 al precio
 		}
