@@ -23,7 +23,7 @@ public class Electrodomestico {
 	/*Valores disponibles en los atributos notas y colores */
 	String notasConsumo = "ABCDEF";
 
-	String[] colores = {"blacno","nergo","rojo","azul","gris"};
+	String[] colores = {"blacno","negro","rojo","azul","gris"};
 
 	
 	
