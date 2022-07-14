@@ -35,15 +35,14 @@ public class Television extends Electrodomestico {
 	}
 
 	
-	public double precioFinal() {
+	public void precioFinal() {
 		if(this.pulgadas > 40) {
 			//Incrementamos el precio un 30%
-			precio = (precio * 1.30);
+			this.precio = (this.precio * 1.30);
 		}
 		if(this.TDT == true ) {
-			precio += 50;
+			this.precio += 50;
 		}
-		return this.precio;
 	}
 	
 	
