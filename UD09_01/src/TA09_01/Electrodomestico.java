@@ -29,21 +29,71 @@ public class Electrodomestico {
 	
 	public Electrodomestico() {
 	}
-
-
-
+	
 	public Electrodomestico(double precio, double peso) {
 		this.precio = precio;
 		this.peso = peso;
 	}
 
 
-
 	public Electrodomestico(double precio, String color, char consumoEnergetico, double peso) {
 		this.precio = precio;
 		this.peso = peso;
 		
-		//Comprobación de que el color que ha introducido el usuario esta disponible
+		//Comprueba el color introducido por el usuario sin importar si ha utilizado mayúsculas o minúsculas al introducirlo
+		comprobarColor(color.toLowerCase()); 
+				
+		comprobarConsumoEnergetico(consumoEnergetico);	
+	}
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+	public char getConsumoEnergetico() {
+		return consumoEnergetico;
+	}
+
+
+
+	public double getPeso() {
+		return peso;
+	}
+	
+	/**
+     * Método que comprueba si la nota de consumo introducido por el usuario existe
+     * @param letra nota de consumo introducida
+     */
+	public void comprobarConsumoEnergetico(char letra) {
+		boolean notaAvailable = false;
+		
+		for (int i = 0; i < notasConsumo.length(); i++) {
+			if(notasConsumo.charAt(i) == letra ) {
+				notaAvailable = true;
+			}
+		}
+		
+
+		if(notaAvailable) {
+			this.consumoEnergetico = letra;
+		}
+	}
+	
+	/**
+     * Método que comprueba que el color que ha introducido el usuario esta disponible
+     * @param color color introducido por el usuario
+     */
+	public void comprobarColor(String color) {
+		
 		boolean colorAvailable = false;
 		
 		for (int i = 0; i < colores.length; i++) {
@@ -52,25 +102,51 @@ public class Electrodomestico {
 				break;
 			}
 		}
-		 
+		
 		if(colorAvailable) { //Si lo esta se le asigna el color sino se quedará con el color por defecto
 			this.color = color;
 		}
 		
-		//Comprobación de que el consumo introducido por el usuario existe
-		boolean notaAvailable = false;
-		for (int i = 0; i < notasConsumo.length(); i++) {
-			if(notasConsumo.charAt(i) == consumoEnergetico ) {
-				notaAvailable = true;
-			}
-		}
-
-		if(colorAvailable) {
-			this.consumoEnergetico = consumoEnergetico;
-		}
 	}
+
+	/**
+     * Suma al precio final según el peso y el consumo del artículo 
+     */
+	public void precioFinal () {
+				
+		if (this.peso >= 0 && this.peso <= 19) {
+			this.precio  += 10;
+		}else if(this.peso >= 20 && this.peso <= 49) {
+			this.precio += 50;			
+		}else if(this.peso >= 50 && this.peso <= 79) {
+			this.precio += 80;			
+		}else {
+			this.precio += 100;			
+		}
+		
+		switch(this.consumoEnergetico) {
+			case 'A':
+				this.precio += 100;	
+			break;
+			case 'B':
+				this.precio += 80;	
+			break;
+			case 'C':
+				this.precio += 60;	
+			break;
+			case 'D':
+				this.precio += 50;	
+			break;
+			case 'E':
+				this.precio += 30;	
+			break;
+			case 'F': 
+				this.precio += 10;	
+			break;
+		}
+		
 	
-	
+	}
 	
 	
 
