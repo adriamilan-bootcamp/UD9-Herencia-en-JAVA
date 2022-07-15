@@ -1,19 +1,21 @@
 package TA09_05;
 
-public class Profesor extends Persona{
+import TA09_02.Entregable;
+
+public class Profesor extends Persona implements Faltas {
 	
 	private String materiasDisponibles[] = {"matematicas","filosofia","fisica"};
-	
-	private int maxFaltas = 20;
-	
+		
 	/*Atributos de la clase */	
 	private String materia = "";
 	
 	private boolean disponible =  true;
 	
-	private int porcentageFaltas = 0;
+	public Profesor () {
+		
+	}
 	
-	public Profesor(String nombre, int edad, char sexo, String materia , boolean disponible , int porcentageFaltas) {
+	public Profesor(String nombre, int edad, char sexo, String materia , boolean disponible) {
 		super(nombre, edad, sexo);
 		this.disponible = disponible;
 
@@ -23,10 +25,8 @@ public class Profesor extends Persona{
 			this.materia = materia;
 		}
 		
-		this.porcentageFaltas = porcentageFaltas;
 	}
 	
-
 	/**
 	 * @return the materia
 	 */
@@ -59,6 +59,16 @@ public class Profesor extends Persona{
 		return mDisponible;
 	}
 	
-//	public checkFaltas
-
+	@Override
+	public boolean Faltas () {
+		boolean disponible = true;
+		int random = (int)((Math.random() * ((100) - 0)) + 0);
+		
+		if( random < 21) {
+			disponible = false;
+		}
+		
+		return disponible;
+	}
+ 
 }

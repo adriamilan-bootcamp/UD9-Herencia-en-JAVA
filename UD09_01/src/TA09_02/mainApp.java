@@ -29,7 +29,6 @@ public class mainApp {
 		Serie serieMasTemporadas =  serieMasTemporadas(lSeries); 
 		Videojuego videojuegoMasHoras = videojuegoMasHoras(lVideojuegos); 
 
-		
 		System.out.println("Series y Videojuegos entregados: "+entregados);
 		
 		System.out.println(serieMasTemporadas.toString()+"\n"+videojuegoMasHoras.toString());		
