@@ -2,21 +2,16 @@ package TA09_05;
 
 public class Materia {
     
-    private final String NOMBRE_DEF = "TechMabs";
-    private final double NOTA_DEF = 0.00;
-    
     private final String MATERIAS_DISPONIBLES[] = {"matematicas","filosofia","fisica"};
     
-    private String nombre = NOMBRE_DEF;
-    private double nota = NOTA_DEF;
+    private String nombre = MATERIAS_DISPONIBLES[0];
     
     public Materia() {
         
     }
     
-    public Materia(String nombre, double nota) {
+    public Materia(String nombre) {
         this.nombre = nombre;
-        this.nota = nota;
     }
     
     // Getters & Setters
@@ -32,18 +27,6 @@ public class Materia {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-    /**
-     * @return the nota
-     */
-    public double getNota() {
-        return nota;
-    }
-    /**
-     * @param nota the nota to set
-     */
-    public void setNota(double nota) {
-        this.nota = nota;
     }
         
 }
