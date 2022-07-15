@@ -1,5 +1,7 @@
 package TA09_02;
 
+import java.nio.charset.StandardCharsets;
+
 public class Videojuego implements Entregable {
 	
 	/* Valores por defecto */
@@ -80,8 +82,9 @@ public class Videojuego implements Entregable {
 	
 	@Override
 	public String toString() {
-		return "Videojuego [titulo=" + titulo + ", Horas estimadas=" + horasEstimadas + ", entregado=" + entregado + ", g\u00e9nero="
-				+ genero + ", compa\u00f1ia=" + compania + "]";
+		String message = "Videojuego [titulo=" + titulo + ", Horas estimadas=" + horasEstimadas + ", entregado=" + entregado + ", género=" + genero + ", compañia=" + compania + "]";
+		String asciiMessage = new String(message.getBytes(), StandardCharsets.UTF_8);
+		return asciiMessage;
 	}
 	
 	// Interfaces
