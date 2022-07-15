@@ -5,6 +5,8 @@ public class Materia {
     private final String NOMBRE_DEF = "TechMabs";
     private final double NOTA_DEF = 0.00;
     
+    private final String MATERIAS_DISPONIBLES[] = {"matematicas","filosofia","fisica"};
+    
     private String nombre = NOMBRE_DEF;
     private double nota = NOTA_DEF;
     
