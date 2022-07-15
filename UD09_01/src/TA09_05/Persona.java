@@ -9,5 +9,14 @@ public class Persona {
 	public Persona() {
 		// TODO Auto-generated constructor stub
 	}
+
+
+	public Persona(String nombre, int edad, char sexo) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.sexo = sexo;
+	}
+	
+	
 	
 }
