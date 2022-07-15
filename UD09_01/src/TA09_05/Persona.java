@@ -5,6 +5,7 @@ public class Persona {
 	protected int edad;
 	protected char sexo;
 	
+	
 	public Persona() {
 		// TODO Auto-generated constructor stub
 	}
