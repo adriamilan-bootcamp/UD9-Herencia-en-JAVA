@@ -1,26 +1,25 @@
 package TA09_05;
 
-import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Random;
 
-public class Estudiante extends Persona implements Faltas {
+public class Estudiante extends Persona {
     
-    private ArrayList<Materia> calificaciones = new ArrayList<Materia>();
-    private String novillos = Faltas();
+    private Hashtable<String, Double> calificaciones = new Hashtable<>();
+    private String novillos = faltasChecker();
     
     public Estudiante() {
-        calificaciones.add(new Materia());
+    
     }
     
-    public Estudiante(String nombre, int edad, char sexo, String[] materias, double[] notas) {
+    public Estudiante(String nombre, int edad, char sexo, String[][] materiasNotas) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
-        for (int i = 0; i < materias.length; i++ ) {
-            calificaciones.add(new Materia(materias[i], notas[i]));
+        for (int i = 0; i < materiasNotas.length; i++ ) {
+        	añadirNotaMateria(materiasNotas[i][0],Double.parseDouble(materiasNotas[i][1]));
         }
     }
-    
     
     
     /* 
@@ -28,11 +27,20 @@ public class Estudiante extends Persona implements Faltas {
      * 50% => SI => false
      * 50% => NO => true
      */
-    public boolean Faltas () {
+    public String faltasChecker () {
         Random random = new Random();
-        boolean falta = random.nextBoolean();
+        boolean novillos = random.nextBoolean();
         
-        return falta;
+        if (novillos == false) {
+            return "en classe";
+        } else {
+            return "haciendo novillos";
+        }
+    }
+    
+    
+    public void añadirNotaMateria (String materia, double nota) {
+    	this.calificaciones.put(materia, nota);
     }
 
 }
