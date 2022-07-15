@@ -3,10 +3,10 @@ package TA09_05;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Faltas {
     
     private ArrayList<Materia> calificaciones = new ArrayList<Materia>();
-    private String novillos = faltasChecker();
+    private String novillos = Faltas();
     
     public Estudiante() {
         calificaciones.add(new Materia());
@@ -28,15 +28,11 @@ public class Estudiante extends Persona {
      * 50% => SI => false
      * 50% => NO => true
      */
-    public String faltasChecker () {
+    public boolean Faltas () {
         Random random = new Random();
-        boolean novillos = random.nextBoolean();
+        boolean falta = random.nextBoolean();
         
-        if (novillos == false) {
-            return "en classe";
-        } else {
-            return "haciendo novillos";
-        }
+        return falta;
     }
 
 }
