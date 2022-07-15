@@ -17,7 +17,7 @@ public class Estudiante extends Persona {
         this.edad = edad;
         this.sexo = sexo;
         for (int i = 0; i < materiasNotas.length; i++ ) {
-        	añadirNotaMateria(materiasNotas[i][0],Double.parseDouble(materiasNotas[i][1]));
+        	addNotaMateria(materiasNotas[i][0],Double.parseDouble(materiasNotas[i][1]));
         }
     }
     
@@ -39,7 +39,7 @@ public class Estudiante extends Persona {
     }
     
     
-    public void añadirNotaMateria (String materia, double nota) {
+    public void addNotaMateria (String materia, double nota) {
     	this.calificaciones.put(materia, nota);
     }
 
