@@ -33,16 +33,18 @@ public class Profesor extends Persona implements Faltas {
 	}
 
 
+	/**
+     * Método que aleatoriamente indica si el profesor ha faltado o no 
+    */
 	@Override
 	public boolean Faltas () {
-		boolean disponible = true;
 		int random = (int)((Math.random() * ((100) - 0)) + 0);
 		
 		if( random < 21) {
-			disponible = false;
-		}
+			return false;
+		}	
 		
-		return disponible;
+		return true;
 	}
  
 }
