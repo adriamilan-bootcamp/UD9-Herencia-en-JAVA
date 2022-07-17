@@ -90,7 +90,7 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return "El libro con ISBN: "+this.ISBN+" creado por: "+this.autor+"tiene: "+this.nPaginas+" paginas";
+		return "El libro con ISBN: "+this.ISBN+" creado por  "+this.autor+" tiene "+this.nPaginas+" paginas";
 	}
 		
 	
