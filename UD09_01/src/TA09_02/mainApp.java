@@ -3,21 +3,9 @@ package TA09_02;
 public class mainApp {
 
 	public static void main(String[] args) {
-		Serie lSeries[] = new Serie[5];
 		
-		lSeries[0] = new Serie("The Walking Dead", 3, "Creador");
-		lSeries[1] = new Serie("THE SERIE", 12, "Ram");
-		lSeries[2] = new Serie("lost", 7, "Diosito");
-		lSeries[3] = new Serie("Dynamo", 6, "Kirito");
-		lSeries[4] = new Serie("StarWars Ren's Path", 24, "Rem");
-		
-		Videojuego lVideojuegos[] = new Videojuego[5];
-		
-		lVideojuegos[0] = new Videojuego("UFC1", 40, "Lucha","EA");
-		lVideojuegos[1] = new Videojuego("UFC2", 44, "Lucha","EA");
-		lVideojuegos[2] = new Videojuego("UFC4", 49, "Lucha","EA");
-		lVideojuegos[3] = new Videojuego("GTA4", 50, "Mundo Abierto","Rockstar");
-		lVideojuegos[4] = new Videojuego("GTA5", 60, "Mundo Abierto","Rockstar");
+		Serie lSeries[] = crearSeries();
+		Videojuego lVideojuegos[] = crearVideojuegos();
 
 		lSeries[0].entregar();
 		lSeries[4].entregar();
@@ -33,7 +21,41 @@ public class mainApp {
 		
 		System.out.println(serieMasTemporadas.toString()+"\n"+videojuegoMasHoras.toString());		
 	}
-
+	
+	/**
+     * Metodo que crea las series
+     * @return la array con las series creadas 
+    */
+	public static Serie[] crearSeries() {
+		
+		Serie lSeries[] = new Serie[5];
+		
+		lSeries[0] = new Serie("The Walking Dead", 3, "Creador");
+		lSeries[1] = new Serie("THE SERIE", 12, "Ram");
+		lSeries[2] = new Serie("lost", 7, "Diosito");
+		lSeries[3] = new Serie("Dynamo", 6, "Kirito");
+		lSeries[4] = new Serie("StarWars Ren's Path", 24, "Rem");
+		
+		return lSeries;
+	}
+	
+	/**
+     * Metodo que crea los videojuegos
+     * @return la array con los videojuegos creados
+    */
+	public static Videojuego[] crearVideojuegos() {
+		
+		Videojuego lVideojuegos[] = new Videojuego[5];
+		
+		lVideojuegos[0] = new Videojuego("UFC1", 40, "Lucha","EA");
+		lVideojuegos[1] = new Videojuego("UFC2", 44, "Lucha","EA");
+		lVideojuegos[2] = new Videojuego("UFC4", 49, "Lucha","EA");
+		lVideojuegos[3] = new Videojuego("GTA4", 50, "Mundo Abierto","Rockstar");
+		lVideojuegos[4] = new Videojuego("GTA5", 60, "Mundo Abierto","Rockstar");
+		
+		return lVideojuegos;
+	}
+	
 	/**
      * Método que cuenta cuantas series i videojuegos hay entregados y devuelve los que lo estan
      * @param lSeries array de Series
