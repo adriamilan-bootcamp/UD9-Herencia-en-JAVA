@@ -1,16 +1,27 @@
 package TA09_03;
 
 public class Libro {
+
+	/*Atributos*/
 	private String ISBN;
-	private String Titulo;
-	private String Autor;
+	
+	private String titulo;
+	
+	private String autor;
+	
 	private int nPaginas;
 	
+	/*Constructor */
+	/**
+	 * @param iSBN
+	 * @param titulo
+	 * @param autor
+	 * @param nPaginas
+	 */
 	public Libro(String iSBN, String titulo, String autor, int nPaginas) {
-		super();
-		ISBN = iSBN;
-		Titulo = titulo;
-		Autor = autor;
+		this.ISBN = iSBN;
+		this.titulo = titulo;
+		this.autor = autor;
 		this.nPaginas = nPaginas;
 	}
 
@@ -21,40 +32,46 @@ public class Libro {
 		return ISBN;
 	}
 
+
 	/**
 	 * @param iSBN the iSBN to set
 	 */
 	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 	}
+
 
 	/**
 	 * @return the titulo
 	 */
 	public String getTitulo() {
-		return Titulo;
+		return titulo;
 	}
+
 
 	/**
 	 * @param titulo the titulo to set
 	 */
 	public void setTitulo(String titulo) {
-		Titulo = titulo;
+		this.titulo = titulo;
 	}
+
 
 	/**
 	 * @return the autor
 	 */
 	public String getAutor() {
-		return Autor;
+		return autor;
 	}
+
 
 	/**
 	 * @param autor the autor to set
 	 */
 	public void setAutor(String autor) {
-		Autor = autor;
+		this.autor = autor;
 	}
+
 
 	/**
 	 * @return the nPaginas
@@ -62,6 +79,7 @@ public class Libro {
 	public int getnPaginas() {
 		return nPaginas;
 	}
+
 
 	/**
 	 * @param nPaginas the nPaginas to set
@@ -72,9 +90,8 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return "El libro con ISBN: "+this.ISBN+" creado por: "+this.Autor+"tiene: "+this.nPaginas+" páginas";
+		return "El libro con ISBN: "+this.ISBN+" creado por: "+this.autor+"tiene: "+this.nPaginas+" paginas";
 	}
-	
-	
+		
 	
 }
