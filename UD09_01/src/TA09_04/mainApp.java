@@ -6,14 +6,16 @@ public class mainApp {
 
 	public static void main(String[] args) {
 
-		inputOutput();
-		
+		inputOutput();		
 	}
 
+	/**
+     * Metodo en el que se indica el numero de calculos que quiere hacer el usuario y se realizan
+    */
 	public static void inputOutput() {
 		
 		// Pedimos al usuario la cantidad de calculos que quiere realizar
-		int numeroCalculos = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de caluclos que quieres realizar."));
+		int numeroCalculos = Integer.parseInt(JOptionPane.showInputDialog("Introduce el numero de caluclos que quieres realizar."));
 		
 		// Creamos cada objeto y mostramos los calculos realizados.
 		for (int i = 0; i < numeroCalculos; i++) {
@@ -27,6 +29,7 @@ public class mainApp {
 			
 			// Mostramos los calculos
 			raiz.calcular();
+
 		}
 		
 	}
