@@ -7,6 +7,18 @@ import TA09_02.Serie;
 public class mainApp {
 
 	public static void main(String[] args) {
+		
+		Electrodomestico electrodomesticos[] = crearElectrodomesticos();
+		
+		showPreciosElectrodomesticos(electrodomesticos);
+			
+	}
+
+	/**
+     * Metodo que crea los electrodomesticos
+     * @return la array con los electrodomesticos creados
+    */
+	public static Electrodomestico[] crearElectrodomesticos() {
 		Electrodomestico electrodomesticos[] = new Electrodomestico[10];
 		
 		electrodomesticos[0] = new Lavadora(31,200,"Gris",'B',7);
@@ -19,6 +31,16 @@ public class mainApp {
 		electrodomesticos[7] = new Television(45,false,599,"negro",'B',4);	
 		electrodomesticos[8] = new Television(45,false,499,"amarillo",'B',4);		
 		electrodomesticos[9] = new Television(25,false,299,"verde",'T',4);		
+		
+		return electrodomesticos;
+	}
+
+	/**
+     * Metodo que calcula y muestra el precio de todas las lavadoras , el precio de todas las televisones y el precio de todos los electrodomesticos
+     * @param lSeries array de Series
+     * @param lVideojuegos array de Vdeojuegos
+    */
+	public static void showPreciosElectrodomesticos(Electrodomestico electrodomesticos[]) {
 		
 		double precioLavadoras = 0;
 		double precioTelevisiones = 0;
@@ -41,8 +63,7 @@ public class mainApp {
 
 		System.out.println("Precio de todas las Lavadoras :"+df.format(precioLavadoras)+ "€");
 		System.out.println("Precio de todas las Televisiones: "+df.format(precioTelevisiones)+ "€");
-		System.out.println("Precio de todos los electrodomesticos: "+df.format(preciototal)+ "€");
-		
+		System.out.println("Precio de todos los electrodomesticos: "+df.format(preciototal)+ "€");		
 	}
 
 }
