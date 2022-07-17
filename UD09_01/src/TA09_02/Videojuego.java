@@ -92,7 +92,6 @@ public class Videojuego implements Entregable {
 	/*
 	 * Cambia atributo entregado a true.
 	 */
-	@Override
 	public void entregar() {
 		this.entregado = true;
 	}
@@ -100,7 +99,6 @@ public class Videojuego implements Entregable {
 	/*
 	 * Cambia atributo entregado a false.
 	 */
-	@Override
 	public void devolver() {
 		this.entregado = false;
 	}
@@ -108,7 +106,6 @@ public class Videojuego implements Entregable {
 	/*
 	 * Devuelve el estado del atributo prestado.
 	 */
-	@Override
 	public boolean isEntregado() {
 		return entregado;
 	}
