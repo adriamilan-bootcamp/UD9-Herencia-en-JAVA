@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Estudiante extends Persona implements Faltas {
     
     private boolean novillos = Faltas();
-    private Materias calificaciones = new Materias();
+    private Materia calificaciones = new Materia();
     
     public Estudiante() {
     	// Constructor por defecto
@@ -67,15 +67,15 @@ public class Estudiante extends Persona implements Faltas {
 	 * 
 	 * Pasaremos un array booleano con un true o false depende si la materia esta disponible para anadir una nota o no
 	 */
-    public void setNotas (boolean[] materiasDisponibles) {
+    public void setNotas (Boolean[] materiasNombre2) {
     	// Declaramos un array con las materias disponibles
     	String[] materiasNombre = {"Mates", "Filosofia", "Fisica"};
     	
     	// Para cada materia cambiaremos su valor de 0.00 a el valor que escogeremos si la materia esta disponible
     	for (int i = 0; i < materiasNombre.length; i++) {
-    		if (materiasDisponibles[i] == true) { // Si esta disponible
+    		if (materiasNombre2[i] == true) { // Si esta disponible
     			// replace key(nombreMateria), double(nota)
-    			this.calificaciones.getMaterias().replace(materiasNombre[i], Double.parseDouble(JOptionPane.showInputDialog("Introduce la nota de la asignatura" + materiasNombre[i])));
+    			this.calificaciones.getMaterias().replace(materiasNombre[i], Double.parseDouble(JOptionPane.showInputDialog("Introduce la nota de la asignatura: " + materiasNombre[i])));
     		}
     	}
     
@@ -85,5 +85,7 @@ public class Estudiante extends Persona implements Faltas {
     public Hashtable<String, Double> getNotas() {
     	return this.calificaciones.getMaterias(); // Devuelve un hashtable (nombreNota, nota)
     }
+    
+    
 
 }

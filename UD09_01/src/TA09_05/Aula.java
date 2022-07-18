@@ -17,6 +17,7 @@ public class Aula {
 		this.materia = materia;
 		this.profesor = profesor;
 		this.estudiantes = estudiantes; 
+		this.nEstadiantesMax = estudiantes.length+1;
 	}
 	
 	/**
@@ -91,14 +92,24 @@ public class Aula {
 
 
 	/**
-     * Método que comprueba si el numero de alumnos en el aula es superior o igual a la mitad de su capacidad de estudiantes, si es superior se podrá hacer clase, sino no y
+     * Mï¿½todo que comprueba si el numero de alumnos en el aula es superior o igual a la mitad de su capacidad de estudiantes, si es superior se podrï¿½ hacer clase, sino no y
      * si la materia del aula es la misma que imparte el profesor del aula.
-     * @return el resultado de la comprobación
+     * @return el resultado de la comprobaciï¿½n
     */
 	public boolean comprobarClase() {
 		
+		if(!profesor.Faltas()) {
+			return false;
+		}
 		
-		if((int)(this.nEstadiantesMax/2) >= estudiantes.length && this.profesor.getMateria().equals(this.materia)) {
+		int c = 0;
+		for (int i = 0; i < estudiantes.length; i++) {
+			if(estudiantes[i].isNovillos()) {
+				c++;
+			}
+		}
+		
+		if((int)(this.nEstadiantesMax/2) >= c && this.profesor.getMateria().equals(this.materia)) {
 			return true;
 		}
 		return false;
