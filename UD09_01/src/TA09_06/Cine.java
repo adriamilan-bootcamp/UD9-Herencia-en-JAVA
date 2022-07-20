@@ -1,6 +1,7 @@
 package TA09_06;
 
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -40,6 +41,9 @@ public class Cine {
 		this.peliculaReproduciendose = peliculaReproduciendose;
 	}
 
+	/**
+	 * Metodo que genera una sala "vacia".
+	 */
 	public void genSala() {
 		for (int i = 0; i < sala.length; i++) {
 			for (int j = 0; j < sala[i].length; j++) {
@@ -48,12 +52,24 @@ public class Cine {
 		}
 	}
 	
+	/**
+	 * Metodo en el que se introducen el numero de espectadores que quieren entrar al cine y se les deniega o concede el acceso para que entren y se sientan en la sala a ver la pelicula.
+	 */
 	public void venderEntradas() {
+        Scanner sc = new Scanner(System.in);
 		int n ,x ,y;
 		
+		int capacidadSala = sala.length*sala[1].length;
+		
 		do {
-			n = Integer.parseInt( JOptionPane.showInputDialog("Introduce el numero de espectadores:") );
-		} while (n > 72);
+			System.out.print("\nIntroduce el numero de espectadores: ");
+			n = sc.nextInt();
+			
+			if(n > capacidadSala) {
+				System.out.println("\nEstas introduciendo más espectadores de los que pueden entrar a la sala (max "+capacidadSala+" espectadores)");
+			}
+			
+		} while (n > capacidadSala);
 		
 		for (int i = 0; i < n; i++) {
 			Random r = new Random();
@@ -72,18 +88,36 @@ public class Cine {
 			} while (!sala[x][y].isEnSala());
 		}
 	}
-	
+
+	/**
+	 * Metodo que muestra las butacas de una sala y si estan ocupadas por un espectador o no.
+	 */
 	public void printSala() {
+		String letrasColumas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		int numEspectadores = 0;
+		
 		System.out.println();
 		System.out.println();
 		System.out.println();
+		
+		System.out.println("[Butacas de la Sala para ver "+peliculaReproduciendose.getTitulo()+"]\n(No ocupadas x , ocupadas o)\n");
 		for (int i = 0; i < sala.length; i++) {
 			for (int j = 0; j < sala[i].length; j++) {
-				//JOptionPane.showMessageDialog(null, "");
-				System.out.print( sala[i][j].isEnSala()+"	" );
+				System.out.print("["+(sala.length-i)+""+letrasColumas.charAt(j)+"] ");
+				if( sala[i][j].isEnSala()) {
+					System.out.print("o ");
+					numEspectadores++;
+				}else {
+					System.out.print("x ");
+				}
 			}
 			System.out.println();
 		}
+		
+		if(numEspectadores != 0) {
+			System.out.println("\nHan entrado a ver la pelicula "+numEspectadores+" espectadores!");
+		}
+
 	}
 	
 	
