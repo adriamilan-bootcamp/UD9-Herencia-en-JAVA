@@ -6,15 +6,17 @@ public class Espectador {
 	private String nombre;
 	private int edad;
 	private double dinero;
+	private boolean enSala = false;
 	
 	public Espectador() {
-		
+		this.enSala = false;
 	}
 	
 	public Espectador(String nombre, int edad, double dinero) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dinero = dinero;
+		this.enSala = true;
 	}
 
 	// Getters & Setters
@@ -40,6 +42,20 @@ public class Espectador {
 		return dinero;
 	}
 
+	/**
+	 * @return the enSala
+	 */
+	public boolean isEnSala() {
+		return enSala;
+	}
+
+	/**
+	 * @param enSala the enSala to set
+	 */
+	public void setEnSala(boolean enSala) {
+		this.enSala = enSala;
+	}
+
 	// Método para saber si el espectador tiene suficiente dinero para ver la película
 	public boolean dineroSuficiente(double costoEntrada) {
 		
@@ -62,6 +78,14 @@ public class Espectador {
 			return false; // Devuelve false
 		}
 		
+	}
+	
+	public void setDinero(int dinero) {
+		this.dinero = dinero;
+	}
+	
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
  	
 }
